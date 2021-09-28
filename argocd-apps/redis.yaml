@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis
+  namespace: argocd
+spec:
+  destination:
+    namespace: redis
+    server: https://kubernetes.default.svc
+  project: redis
+  source:
+    chart: redis
+    helm:
+      version: v3
+      parameters:
+      - name: sentinel.enabled
+        value: 'true'
+      - name: replica.replicaCount
+        value: '3'
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 14.8.11
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
