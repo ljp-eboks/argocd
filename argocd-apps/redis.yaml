@@ -17,6 +17,10 @@ spec:
         value: 'true'
       - name: replica.replicaCount
         value: '3'
+      - name: sentinel.downAfterMilliseconds
+        value: '1000'
+      - name: sentinel.failoverTimeout
+        value: '5000'
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 14.8.11
   syncPolicy:
