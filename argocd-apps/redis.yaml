@@ -16,7 +16,7 @@ spec:
       - name: sentinel.enabled
         value: 'true'
       - name: replica.replicaCount
-        value: '3'
+        value: '4'
       - name: sentinel.downAfterMilliseconds
         value: '1000'
       - name: sentinel.failoverTimeout
