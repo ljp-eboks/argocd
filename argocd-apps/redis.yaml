@@ -21,6 +21,8 @@ spec:
         value: '1000'
       - name: sentinel.failoverTimeout
         value: '4000'
+      - name: 'global.redis.password'
+        value: 'rwBx6ms2eW'
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 15.2.0
   syncPolicy:
